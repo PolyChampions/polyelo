@@ -5,20 +5,22 @@
 
 import nextcord
 from nextcord.ext import commands
+from bot.config import config
 
 
 class PolyELOBot(commands.Bot):
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
 
-    def on_ready(self):
+    async def on_ready(self):
         print(f"logged in: {self.user.name} ({self.user.id})")
 
 
 def main():
-    bot = PolyELOBot()
+    bot = PolyELOBot(owner_ids=config.owner_ids)
+    bot.load_extensions_from_module(config.commands_module)
     # TODO
-    bot.run()
+    bot.run(config.key)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,17 @@
+# Example Bot Config
+
+title = "PolyEloBot Config"
+
+[discord]
+key = "YOUR API KEY HERE"
+
+# Could make this its own table
+owner_ids = [
+    762155750403342358, # great leap
+    496381034628251688, # artemis
+    608290258978865174, # legorooj
+    272510639124250625, # nelluk
+    659859315577847820, # redish
+]
+
+commands_module = "bot.commands"
